@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 10 CS | AI in Banking & Finance Case Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap');
+        
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-emerald: #10b981;
+            --neon-amber: #f59e0b;
+            --dark-bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-emerald));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animations */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+
+        .animate-secure {
+            animation: pulse-ring 3s infinite ease-in-out;
+        }
+
+        @keyframes data-stream {
+            0% { stroke-dashoffset: 200; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        .transaction-path {
+            stroke-dasharray: 12;
+            animation: data-stream 2s infinite linear;
+        }
+
+        @keyframes alert-flash {
+            0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px #ef4444); }
+            50% { opacity: 0.3; filter: drop-shadow(0 0 10px #ef4444); }
+        }
+
+        .animate-alert {
+            animation: alert-flash 1s infinite ease-in-out;
+        }
+
+        .copy-text {
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 280px;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass px-6 py-4 border-b border-white/5">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="font-bold tracking-tighter text-lg uppercase">Fin <span class="text-emerald-400">AI</span></div>
+            <div class="flex gap-6 text-[10px] font-mono tracking-widest uppercase">
+                <a href="#intro" class="hover:text-emerald-400">Overview</a>
+                <a href="#workflow" class="hover:text-emerald-400">Security Logic</a>
+                <a href="#case-studies" class="hover:text-emerald-400">Case Studies</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto space-y-40 pt-24 pb-20">
+
+        <!-- SECTION: AI IN BANKING INTRODUCTION -->
+        <section id="intro">
+            <header class="text-center mb-16">
+                <span class="text-xs font-mono text-emerald-400 tracking-widest uppercase">Special Case Study: Finance</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mt-2 mb-6 uppercase tracking-tight">Intelligence for <span class="gradient-text">Security</span></h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">Analyzing how Machine Learning and AI manage billions of global transactions to protect our money and automate banking.</p>
+            </header>
+
+            <div class="glass p-8 md:p-12 rounded-3xl border-t-2 border-emerald-500 mb-16">
+                <h3 class="text-2xl font-bold mb-6 text-white uppercase tracking-widest">1. The Evolution of Digital Banking</h3>
+                <div class="copy-text space-y-6 text-lg">
+                    <p>
+                        In the 10th-grade Computer Science context, <strong>Artificial Intelligence in Banking</strong> refers to the use of advanced data processing to automate financial decisions, detect illegal activities, and improve customer service. Banking is no longer just about brick-and-mortar buildings; it is a giant network of data points.
+                    </p>
+                    <p>
+                        The core mission of AI in finance is <strong>Risk Management</strong>. By looking at historical spending patterns and global financial trends, AI can predict market crashes, identify individual creditworthiness, and stop hackers in milliseconds.
+                    </p>
+                    <div class="bg-emerald-500/10 p-6 rounded-2xl border border-emerald-500/20 italic text-sm">
+                        "Money never sleeps, and neither does AI. It acts as a digital sentinel, watching every cent to ensure the global financial system remains stable and secure."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TRANSACTION ANALYSIS CYCLE -->
+        <section id="workflow">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold uppercase tracking-widest text-white">The Fraud Detection Cycle</h2>
+                <div class="h-1 w-20 bg-emerald-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="img-box bg-slate-900 border-2 border-emerald-500/10">
+                    <!-- Transaction Flow Animation -->
+                    <svg width="300" height="200" viewBox="0 0 300 200">
+                        <circle cx="50" cy="100" r="10" fill="#00d2ff" class="animate-secure" />
+                        <circle cx="250" cy="100" r="10" fill="#10b981" />
+                        <path class="transaction-path" d="M60,100 L240,100" fill="none" stroke="#10b981" stroke-width="2" />
+                        <text x="35" y="80" fill="#00d2ff" font-size="8" font-family="monospace">USER_ID: 8821</text>
+                        <text x="220" y="80" fill="#10b981" font-size="8" font-family="monospace">MERCHANT_X</text>
+                        <!-- Interception logic visual -->
+                        <g transform="translate(140, 90)">
+                            <rect x="0" y="0" width="20" height="20" rx="4" fill="#ef4444" class="animate-alert" />
+                            <text x="2" y="-5" fill="#ef4444" font-size="6" font-family="monospace">AI_GATEWAY</text>
+                        </g>
+                    </svg>
+                    <div class="absolute top-4 left-4 flex items-center gap-2">
+                        <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+                        <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-tighter">Monitoring_Global_Network...</span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 glass rounded-2xl border-l-4 border-blue-500">
+                        <h4 class="font-bold text-white mb-2">Step 1: Pattern Baseline</h4>
+                        <p class="text-sm text-slate-400">AI learns your typical spending (e.g., you usually buy coffee at 8 AM in London).</p>
+                    </div>
+                    <div class="p-6 glass rounded-2xl border-l-4 border-emerald-500">
+                        <h4 class="font-bold text-white mb-2">Step 2: Anomaly Detection</h4>
+                        <p class="text-sm text-slate-400">If your card is used for a $5,000 watch in Tokyo at 3 AM, AI identifies this as an anomaly.</p>
+                    </div>
+                    <div class="p-6 glass rounded-2xl border-l-4 border-red-500">
+                        <h4 class="font-bold text-white mb-2">Step 3: Instant Intervention</h4>
+                        <p class="text-sm text-slate-400">The transaction is blocked instantly, and an alert is sent to your smartphone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: DETAILED CASE STUDIES -->
+        <section id="case-studies">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold uppercase tracking-widest text-white">Banking Case Studies</h2>
+                <p class="text-slate-500 text-sm mt-2">How billions of dollars are managed by intelligent code.</p>
+            </div>
+
+            <div class="space-y-32">
+                
+                <!-- Case Study 1: Credit Scoring -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-6 uppercase tracking-tight">1. AI-Driven Credit Scoring</h3>
+                        <div class="copy-text space-y-4 text-sm md:text-base">
+                            <p><strong>The Context:</strong> Traditionally, banks take weeks to check a person’s history before approving a loan (to buy a car or house).</p>
+                            <p><strong>The Case:</strong> Modern banks use AI to analyze thousands of variables instantly—not just your salary, but your bill payment history, spending habits, and even professional stability. AI creates a <strong>Predictive Model</strong> that tells the bank the exact probability of you paying back the loan.</p>
+                            <p class="italic text-slate-500">Outcome: Loans that used to take 14 days are now approved in 14 seconds via banking apps.</p>
+                        </div>
+                    </div>
+                    <div class="img-box bg-slate-800">
+                        <div class="text-center">
+                             <div class="text-5xl font-bold text-emerald-400 mb-2">820</div>
+                             <div class="text-[10px] font-mono text-slate-500 uppercase mb-4">AI_CREDIT_SCORE: EXCELLENT</div>
+                             <div class="flex gap-1 justify-center">
+                                 <div class="w-8 h-2 bg-emerald-500 rounded-full"></div>
+                                 <div class="w-8 h-2 bg-emerald-500 rounded-full"></div>
+                                 <div class="w-8 h-2 bg-emerald-500 rounded-full"></div>
+                                 <div class="w-8 h-2 bg-slate-700 rounded-full"></div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: Algorithmic Trading -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1 img-box bg-slate-900 border border-emerald-500/20">
+                        <!-- Stock Graph Simulation -->
+                        <svg width="200" height="100" viewBox="0 0 200 100">
+                             <path d="M0,80 L40,70 L80,90 L120,40 L160,50 L200,10" fill="none" stroke="#10b981" stroke-width="2" class="transaction-path" />
+                             <circle cx="200" cy="10" r="4" fill="#10b981" class="animate-pulse" />
+                        </svg>
+                        <span class="absolute bottom-4 left-4 text-[10px] font-mono text-emerald-400">MARKET_EXECUTION: BUY_ORDER_771</span>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-2xl font-bold text-emerald-400 mb-6 uppercase tracking-tight">2. Algorithmic Trading</h3>
+                        <div class="copy-text space-y-4 text-sm md:text-base">
+                            <p><strong>The Context:</strong> Stock markets change every millisecond. Human traders cannot keep up with thousands of global news events and price changes at once.</p>
+                            <p><strong>The Case:</strong> AI-powered bots handle over 70% of trades on Wall Street. These bots scan <strong>Big Data</strong> (social media trends, political news, company reports) and execute thousands of trades per second to make a profit. They react to a "market crash" long before a human can even blink.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3: Personal Finance Bots -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-amber-400 mb-6 uppercase tracking-tight">3. AI Financial Advisors</h3>
+                        <div class="copy-text space-y-4 text-sm md:text-base">
+                            <p><strong>The Context:</strong> Most people struggle to save money or invest because they don't have access to expensive financial consultants.</p>
+                            <p><strong>The Case:</strong> "Robo-Advisors" are AI apps that manage your savings for you. The AI identifies if you are spending too much on "dining out" and automatically moves a small amount of money into a savings account when it detects you have extra cash. It creates a <strong>personalized investment plan</strong> based on your age and goals.</p>
+                            <p class="italic text-slate-500">Real-World: Millions of people now use AI apps like Acorns or Mint to manage their wealth automatically.</p>
+                        </div>
+                    </div>
+                    <div class="img-box bg-slate-800">
+                        <div class="w-48 h-32 glass border-amber-500/30 rounded-xl p-4 relative flex flex-col justify-center items-center">
+                             <svg class="w-12 h-12 text-amber-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                             <div class="text-[8px] font-mono text-amber-500 uppercase">Saving_Goal: 85%_Complete</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20 text-center text-slate-600 font-mono text-xs uppercase tracking-widest pb-10 border-t border-white/5 pt-10">
+        AI Case Study: Financial Intelligence // Grade 10 CS // 2024
+    </footer>
+
+</body>
+</html>
