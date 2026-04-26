@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Theory: Computational Thinking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .theory-text {
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+
+        .section-card {
+            border-left: 4px solid #6366f1;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #e2e8f0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+        }
+
+        #progress {
+            height: 100%;
+            background: #6366f1;
+            width: 0%;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <div class="progress-bar">
+        <div id="progress"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 px-6 shadow-2xl">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block px-3 py-1 bg-indigo-500 text-xs font-bold rounded-full mb-4 uppercase tracking-widest">Grade 10 Computer Science</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Theory of Computational Thinking</h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light max-w-2xl">
+                A comprehensive guide to understanding the mental processes used to solve complex problems through logical reasoning.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        
+        <!-- Chapter 1: Introduction -->
+        <section id="introduction" class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6">1. Understanding Computational Thinking (CT)</h2>
+            <div class="theory-text text-slate-700 space-y-4">
+                <p>
+                    <strong>Computational Thinking</strong> is a cognitive or thought process involved in formulating a problem and expressing its solution(s) in such a way that a computer—human or machine—can effectively carry it out. Contrary to popular belief, it is not "thinking like a computer"; rather, it is a human ability to break down problems so that they become manageable.
+                </p>
+                <p>
+                    Introduced as a term by Jeanette Wing in 2006, CT is now considered a fundamental skill for everyone, not just computer scientists. It focuses on logic, analysis, and the creation of systematic steps to reach a goal. It is the bridge between a vague idea and a technical solution.
+                </p>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Importance -->
+        <section id="importance" class="mb-16 bg-white p-8 rounded-2xl shadow-sm">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6">2. Importance in Daily Life</h2>
+            <div class="theory-text text-slate-700 space-y-4">
+                <p>
+                    In our daily lives, we encounter "problems" constantly—from deciding what to wear based on the weather to planning a study schedule for board exams. CT allows us to:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Enhance Efficiency:</strong> By recognizing patterns, we can find shortcuts to repetitive tasks.</li>
+                    <li><strong>Manage Complexity:</strong> Decomposition helps us tackle massive projects without feeling overwhelmed.</li>
+                    <li><strong>Error Reduction:</strong> Logical algorithm design ensures that we don't skip critical steps in a process.</li>
+                    <li><strong>Cross-Disciplinary Utility:</strong> Whether you are solving a Physics numerical, writing a structured History essay, or managing a kitchen, you are using CT.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Chapter 3: The Four Components -->
+        <section id="components">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">3. The Four Pillars of CT</h2>
+
+            <!-- Decomposition -->
+            <div class="section-card border-red-500">
+                <h3 class="text-2xl font-bold text-red-600 mb-4">I. Decomposition</h3>
+                <div class="theory-text text-slate-700">
+                    <p class="mb-3">
+                        Decomposition is the process of breaking a complex problem down into smaller, more manageable parts. When a problem is broken down, each small part can be examined and solved individually.
+                    </p>
+                    <p class="mb-3"><strong>Why it matters:</strong> Small problems are easier to solve than big ones. Different people can work on different parts of the problem simultaneously.</p>
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                        <span class="font-bold block mb-1">Detailed Example:</span> 
+                        To develop a mobile app, you decompose it into: User Interface (UI) design, Database management, Security/Login, and Core Functionality.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pattern Recognition -->
+            <div class="section-card border-blue-500">
+                <h3 class="text-2xl font-bold text-blue-600 mb-4">II. Pattern Recognition</h3>
+                <div class="theory-text text-slate-700">
+                    <p class="mb-3">
+                        Once you have decomposed a problem, you look for similarities or trends among the smaller problems. Patterns are shared characteristics that occur in each problem or within the problem itself.
+                    </p>
+                    <p class="mb-3"><strong>Why it matters:</strong> Recognizing patterns allows us to use solutions that have worked before for similar problems, saving time and mental energy.</p>
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <span class="font-bold block mb-1">Detailed Example:</span> 
+                        In Mathematics, once you recognize the pattern of a <code>(a+b)²</code> expansion, you can solve any problem that fits that structure without relearning the logic.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abstraction -->
+            <div class="section-card border-yellow-500">
+                <h3 class="text-2xl font-bold text-yellow-600 mb-4">III. Abstraction</h3>
+                <div class="theory-text text-slate-700">
+                    <p class="mb-3">
+                        Abstraction is the process of filtering out – or ignoring – the characteristics of patterns that we don't need in order to concentrate on those that we do. It is about creating a "model" of the problem.
+                    </p>
+                    <p class="mb-3"><strong>Why it matters:</strong> If we don't abstract, we may end up with too much information, making the solution overly complicated and hard to implement.</p>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                        <span class="font-bold block mb-1">Detailed Example:</span> 
+                        A Google Map is an abstraction. It doesn't show every single blade of grass or the color of every house; it only shows roads and landmarks because that's all you need for navigation.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Algorithm Design -->
+            <div class="section-card border-green-500">
+                <h3 class="text-2xl font-bold text-green-600 mb-4">IV. Algorithm Design</h3>
+                <div class="theory-text text-slate-700">
+                    <p class="mb-3">
+                        An algorithm is a plan—a set of step-by-step instructions—to solve a problem. It is the final stage where we write the "rules" that must be followed to achieve the desired output.
+                    </p>
+                    <p class="mb-3"><strong>Why it matters:</strong> A good algorithm is unambiguous (clear) and finite (has an end). It ensures that anyone following the steps will get the same correct result.</p>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                        <span class="font-bold block mb-1">Detailed Example:</span> 
+                        A standard long division method in math is an algorithm. If you follow the steps (Divide, Multiply, Subtract, Bring Down), you solve the division every time.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Table -->
+        <section class="mt-20 overflow-hidden border border-slate-200 rounded-xl">
+            <table class="w-full text-left bg-white">
+                <thead class="bg-slate-800 text-white">
+                    <tr>
+                        <th class="p-4">Component</th>
+                        <th class="p-4">Key Goal</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                    <tr>
+                        <td class="p-4 font-bold">Decomposition</td>
+                        <td class="p-4">Break it down</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-bold">Pattern Recognition</td>
+                        <td class="p-4">Find similarities</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-bold">Abstraction</td>
+                        <td class="p-4">Remove details</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 font-bold">Algorithm Design</td>
+                        <td class="p-4">Step-by-step rules</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-500 py-12 px-6 text-center">
+        <p class="mb-2">Prepared for Class 10 Students</p>
+        <p class="text-xs">This content is designed for educational purposes and mirrors standard Computer Science curriculum structures.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>
