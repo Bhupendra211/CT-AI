@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 10 CS | AI in Agriculture Case Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap');
+        
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-green: #39ff14;
+            --neon-amber: #f59e0b;
+            --dark-bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animations */
+        @keyframes grow {
+            0% { transform: scaleY(0.5); opacity: 0.5; }
+            50% { transform: scaleY(1); opacity: 1; }
+            100% { transform: scaleY(0.5); opacity: 0.5; }
+        }
+
+        .animate-grow {
+            animation: grow 4s infinite ease-in-out;
+            transform-origin: bottom;
+        }
+
+        @keyframes scan-horizontal {
+            0% { left: 0%; }
+            100% { left: 100%; }
+        }
+
+        .scanner-line {
+            width: 2px;
+            background: var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+            position: absolute;
+            height: 100%;
+            animation: scan-horizontal 3s linear infinite;
+        }
+
+        @keyframes drop-flow {
+            0% { transform: translateY(-20px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(20px); opacity: 0; }
+        }
+
+        .animate-irrigation {
+            animation: drop-flow 1.5s infinite linear;
+        }
+
+        .copy-text {
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 280px;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass px-6 py-4 border-b border-white/5">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="font-bold tracking-tighter text-lg uppercase">Agri <span class="text-green-400">AI</span></div>
+            <div class="flex gap-6 text-[10px] font-mono tracking-widest uppercase">
+                <a href="#intro" class="hover:text-green-400">Overview</a>
+                <a href="#workflow" class="hover:text-green-400">Logic Flow</a>
+                <a href="#case-studies" class="hover:text-green-400">Case Studies</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto space-y-40 pt-24 pb-20">
+
+        <!-- SECTION: AI IN AGRICULTURE INTRODUCTION -->
+        <section id="intro">
+            <header class="text-center mb-16">
+                <span class="text-xs font-mono text-green-400 tracking-widest uppercase">Special Case Study: Smart Farming</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mt-2 mb-6 uppercase tracking-tight">Intelligence for <span class="gradient-text">Sustainability</span></h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">Exploring how AI, Drones, and IoT sensors are transforming traditional farms into data-driven ecosystems to feed the world.</p>
+            </header>
+
+            <div class="glass p-8 md:p-12 rounded-3xl border-t-2 border-green-500 mb-16">
+                <h3 class="text-2xl font-bold mb-6 text-white uppercase tracking-widest">1. What is Precision Agriculture?</h3>
+                <div class="copy-text space-y-6 text-lg">
+                    <p>
+                        In the 10th-grade Computer Science curriculum, <strong>Artificial Intelligence in Agriculture</strong> (often called Precision Farming) refers to the application of AI and Machine Learning to ensure that crops and soil receive exactly what they need for optimum health and productivity.
+                    </p>
+                    <p>
+                        The core mission of AI in this field is <strong>Resource Optimization</strong>. Instead of spraying an entire field with water or pesticides, AI allows farmers to target specific plants. This reduces waste, lowers costs, and protects the environment from excessive chemical use.
+                    </p>
+                    <div class="bg-green-500/10 p-6 rounded-2xl border border-green-500/20 italic text-sm">
+                        "The future of farming isn't just in the soil; it's in the cloud. By listening to what the plants 'say' through data, AI helps us grow more with less."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SMART CROP MONITORING CYCLE -->
+        <section id="workflow">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold uppercase tracking-widest text-white">The Smart Crop Cycle</h2>
+                <div class="h-1 w-20 bg-green-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="img-box bg-slate-900 border-2 border-green-500/10">
+                    <!-- Crop Monitoring Animation -->
+                    <svg width="300" height="200" viewBox="0 0 300 200">
+                        <!-- Soil -->
+                        <rect x="0" y="160" width="300" height="40" fill="#3f2b1d" />
+                        <!-- Plants -->
+                        <g class="animate-grow">
+                            <path d="M50,160 Q50,120 40,100 M50,160 Q50,120 60,100" stroke="#39ff14" stroke-width="3" fill="none" />
+                        </g>
+                        <g class="animate-grow" style="animation-delay: 0.5s">
+                            <path d="M150,160 Q150,120 140,100 M150,160 Q150,120 160,100" stroke="#39ff14" stroke-width="3" fill="none" />
+                        </g>
+                        <g class="animate-grow" style="animation-delay: 1s">
+                            <path d="M250,160 Q250,120 240,100 M250,160 Q250,120 260,100" stroke="#39ff14" stroke-width="3" fill="none" />
+                        </g>
+                        <!-- Scanner -->
+                        <div class="scanner-line"></div>
+                    </svg>
+                    <div class="absolute top-4 left-4 flex items-center gap-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-[10px] font-mono text-green-400 uppercase tracking-tighter">Scanning_Crop_Health...</span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 glass rounded-2xl border-l-4 border-blue-500">
+                        <h4 class="font-bold text-white mb-2">Step 1: Sensing</h4>
+                        <p class="text-sm text-slate-400">Sensors and Drones collect data on soil moisture, temperature, and leaf color.</p>
+                    </div>
+                    <div class="p-6 glass rounded-2xl border-l-4 border-green-500">
+                        <h4 class="font-bold text-white mb-2">Step 2: Diagnosis</h4>
+                        <p class="text-sm text-slate-400">AI analyzes the data to detect early signs of pests, diseases, or nutrient deficiency.</p>
+                    </div>
+                    <div class="p-6 glass rounded-2xl border-l-4 border-amber-500">
+                        <h4 class="font-bold text-white mb-2">Step 3: Action</h4>
+                        <p class="text-sm text-slate-400">Automated systems deliver precise amounts of water or fertilizer to only the plants that need it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: DETAILED CASE STUDIES -->
+        <section id="case-studies">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold uppercase tracking-widest text-white">Agriculture Case Studies</h2>
+                <p class="text-slate-500 text-sm mt-2">How AI is modernizing the world's oldest industry.</p>
+            </div>
+
+            <div class="space-y-32">
+                
+                <!-- Case Study 1: Drone Analysis -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-6 uppercase tracking-tight">1. Aerial Surveillance (Drones)</h3>
+                        <div class="copy-text space-y-4 text-sm md:text-base">
+                            <p><strong>The Context:</strong> Farmers with hundreds of acres cannot physically walk the entire field every day to check for problems.</p>
+                            <p><strong>The Case:</strong> AI-powered drones fly over fields using <strong>Multispectral Imaging</strong>. This allows them to see things the human eye cannot—like a heat signature indicating a plant is "thirsty" or a color shift indicating a pest attack. The AI generates a "Yield Map" that tells the farmer exactly where to focus their efforts.</p>
+                            <p class="italic text-slate-500">Outcome: Farmers can cover 100 acres in 20 minutes with 98% accuracy in problem detection.</p>
+                        </div>
+                    </div>
+                    <div class="img-box bg-slate-800">
+                        <div class="relative w-full h-full">
+                            <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=800" alt="Farm from above" class="w-full h-full object-cover opacity-30">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <svg class="w-20 h-20 text-blue-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            </div>
+                            <div class="absolute top-10 left-10 border border-blue-500 p-2 rounded text-[8px] font-mono bg-black/50">
+                                ALT: 50M <br>ZOOM: 4X <br>TARGET: AREA_B4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: Robotic Weeders -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1 img-box bg-slate-900 border border-green-500/20">
+                        <!-- Weed Detection Visual -->
+                        <div class="flex gap-8 items-center">
+                            <div class="relative">
+                                <div class="w-12 h-12 rounded-full border-2 border-red-500 flex items-center justify-center">
+                                    <div class="w-4 h-4 bg-red-500 rounded-full animate-ping"></div>
+                                </div>
+                                <span class="absolute -bottom-6 left-0 text-[8px] font-mono text-red-500 uppercase">WEED_DETECTED</span>
+                            </div>
+                            <div class="relative">
+                                <div class="w-12 h-12 rounded-full border-2 border-green-500 flex items-center justify-center">
+                                    <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+                                </div>
+                                <span class="absolute -bottom-6 left-0 text-[8px] font-mono text-green-500 uppercase">CROP_SAFE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-2xl font-bold text-green-400 mb-6 uppercase tracking-tight">2. "See & Spray" Robotics</h3>
+                        <div class="copy-text space-y-4 text-sm md:text-base">
+                            <p><strong>The Context:</strong> Weeds compete with crops for nutrients. Usually, farmers spray the entire field with weed-killer, which is expensive and bad for the soil.</p>
+                            <p><strong>The Case:</strong> Robots equipped with <strong>Computer Vision</strong> drive through rows of crops. The AI identifies every single plant. If it sees a "Crop," it does nothing. If it sees a "Weed," it fires a tiny, precise burst of herbicide directly onto the weed. </p>
+                            <p class="italic text-slate-500">Real-World: This technology (like John Deere's See & Spray) reduces herbicide use by up to 90%.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3: Market & Weather Prediction -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-amber-400 mb-6 uppercase tracking-tight">3. Predictive Weather Analysis</h3>
+                        <div class="copy-text space-y-4 text-sm md:text-base">
+                            <p><strong>The Context:</strong> A sudden rainstorm or drought can destroy a whole year's worth of work if the farmer isn't prepared.</p>
+                            <p><strong>The Case:</strong> AI models analyze decades of weather patterns and satellite data to provide <strong>Micro-Local Forecasts</strong>. Instead of a general "rain today," the AI tells the farmer "heavy rain at your specific farm at 2 PM." This allows the farmer to harvest early or delay planting, saving thousands of dollars in lost crops.</p>
+                        </div>
+                    </div>
+                    <div class="img-box bg-slate-800">
+                        <div class="text-center p-6 glass border-amber-500/30 rounded-2xl">
+                             <svg class="w-16 h-16 text-amber-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                             <div class="text-sm font-bold text-white mb-1">PROBABILITY: 85% RAIN</div>
+                             <div class="text-[10px] font-mono text-slate-500 uppercase">ACTION: DELAY_FERTILIZATION</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20 text-center text-slate-600 font-mono text-xs uppercase tracking-widest pb-10 border-t border-white/5 pt-10">
+        AI Case Study: Agricultural Intelligence // Grade 10 CS // 2024
+    </footer>
+
+</body>
+</html>
