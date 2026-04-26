@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login with PIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #22c55e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        button:hover {
+            background: #16a34a;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .links {
+            display: none;
+            text-align: left;
+        }
+
+        a {
+            display: block;
+            color: #38bdf8;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="loginBox">
+    <h2>Enter PIN</h2>
+    <input type="password" id="pin" placeholder="Enter PIN">
+    <br>
+    <button onclick="checkPin()">Login</button>
+    <div class="error" id="errorMsg"></div>
+</div>
+
+<div class="container links" id="linksPage">
+    <h2>Welcome Bhupendra 🚀</h2>
+
+    <a href="https://bhupendra211.github.io/CT-AI/intro_CT.html" target="_blank">
+        Introduction of Computational Thinking
+    </a>
+
+    <a href="https://bhupendra211.github.io/CT-AI/algo_example.html" target="_blank">
+        Algorithm Examples
+    </a>
+
+    <a href="https://bhupendra211.github.io/CT-AI/problem_solving&algo.html" target="_blank">
+        Problem Solving & Algorithms
+    </a>
+
+</div>
+
+<script>
+    function checkPin() {
+        const correctPin = "bhupendra1234";
+        const userPin = document.getElementById("pin").value;
+
+        if (userPin === correctPin) {
+            document.getElementById("loginBox").style.display = "none";
+            document.getElementById("linksPage").style.display = "block";
+        } else {
+            document.getElementById("errorMsg").innerText = "Wrong PIN ❌";
+        }
+    }
+</script>
+
+</body>
+</html>
