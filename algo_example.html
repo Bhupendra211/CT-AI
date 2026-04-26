@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Algorithms | Making Tea & School Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap');
+        
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-purple: #9d50bb;
+            --neon-green: #39ff14;
+            --dark-bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Algorithm Step Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes steam {
+            0% { transform: translateY(0) scale(1); opacity: 0.5; }
+            100% { transform: translateY(-40px) scale(2); opacity: 0; }
+        }
+
+        @keyframes drive {
+            0% { transform: translateX(-20px) rotate(-1deg); }
+            50% { transform: translateX(20px) rotate(1deg); }
+            100% { transform: translateX(-20px) rotate(-1deg); }
+        }
+
+        @keyframes fill-cup {
+            0% { height: 0%; }
+            100% { height: 70%; }
+        }
+
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-steam { animation: steam 2s infinite linear; }
+        .animate-drive { animation: drive 4s ease-in-out infinite; }
+        
+        .step-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+        }
+
+        .glow-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Header Section -->
+    <header class="max-w-5xl mx-auto text-center mb-16 pt-10">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tighter">
+            Visual <span class="gradient-text">Algorithms</span>
+        </li>
+        <p class="text-slate-400 font-mono text-sm tracking-widest">Logic in Motion // Step-by-Step</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto space-y-32">
+
+        <!-- ALGORITHM 1: MAKING TEA -->
+        <section id="tea-algo">
+            <div class="flex items-center gap-6 mb-12">
+                <h2 class="text-2xl font-bold text-white border-b-2 border-orange-500 pb-2">01. Algorithm: Making Tea</h2>
+                <div class="glow-line flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="glass p-6 rounded-3xl step-card flex flex-col items-center text-center">
+                    <div class="w-20 h-20 mb-6 flex items-center justify-center bg-blue-500/10 rounded-full animate-float">
+                        <svg class="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.618.309a2 2 0 01-1.789 0l-.618-.309a6 6 0 00-3.86-.517l-2.387.477a2 2 0 00-1.022.547V21a1 1 0 001 1h13a1 1 0 001-1v-5.572zM15 10.146V6a2 2 0 00-2-2H9a2 2 0 00-2 2v4.146a4 4 0 01.393 1.708l.107.43a2 2 0 001.94 1.516h5.12a2 2 0 001.94-1.516l.107-.43A4 4 0 0115 10.146z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-mono text-blue-400 mb-2">INIT_BOIL</span>
+                    <h3 class="font-bold text-white uppercase text-sm">Boil Water</h3>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass p-6 rounded-3xl step-card flex flex-col items-center text-center">
+                    <div class="w-20 h-20 mb-6 flex items-center justify-center bg-purple-500/10 rounded-full">
+                        <svg class="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-mono text-purple-400 mb-2">ADD_ELEMENTS</span>
+                    <h3 class="font-bold text-white uppercase text-sm">Add Tea & Sugar</h3>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass p-6 rounded-3xl step-card flex flex-col items-center text-center relative overflow-hidden">
+                    <div class="w-20 h-20 mb-6 flex flex-col items-center justify-center bg-orange-500/10 rounded-full">
+                         <div class="flex gap-1 mb-1">
+                            <div class="w-1 h-4 bg-orange-300 rounded-full animate-steam"></div>
+                            <div class="w-1 h-6 bg-orange-400 rounded-full animate-steam" style="animation-delay: 0.3s"></div>
+                            <div class="w-1 h-4 bg-orange-300 rounded-full animate-steam" style="animation-delay: 0.6s"></div>
+                        </div>
+                        <svg class="w-10 h-10 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-mono text-orange-400 mb-2">BREW_PROCESS</span>
+                    <h3 class="font-bold text-white uppercase text-sm">Brewing...</h3>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="glass p-6 rounded-3xl step-card flex flex-col items-center text-center">
+                    <div class="w-20 h-20 mb-6 flex items-end justify-center bg-green-500/10 rounded-2xl relative p-4">
+                        <div class="w-10 bg-orange-900/60 rounded-t-sm" style="animation: fill-cup 2s forwards"></div>
+                        <svg class="w-12 h-12 text-green-400 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-mono text-green-400 mb-2">OUTPUT_READY</span>
+                    <h3 class="font-bold text-white uppercase text-sm">Strain & Serve</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALGORITHM 2: GOING TO SCHOOL -->
+        <section id="school-algo">
+            <div class="flex items-center gap-6 mb-12">
+                <h2 class="text-2xl font-bold text-white border-b-2 border-yellow-500 pb-2">02. Algorithm: Going to School</h2>
+                <div class="glow-line flex-1" style="background: linear-gradient(90deg, transparent, #eab308, transparent);"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Step 1: Prep -->
+                <div class="glass p-10 rounded-3xl step-card group">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-4 bg-yellow-500/10 rounded-2xl group-hover:bg-yellow-500/20 transition">
+                            <svg class="w-12 h-12 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="font-mono text-yellow-600 text-sm">T-MINUS 1HR</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 uppercase">Preparation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Wake up, get dressed, and pack your school bag according to the timetable.</p>
+                </div>
+
+                <!-- Step 2: Transport (Big visual) -->
+                <div class="glass p-10 rounded-3xl step-card group border-2 border-transparent hover:border-indigo-500/30">
+                    <div class="flex flex-col items-center">
+                        <div class="relative w-full h-24 mb-6 flex items-center justify-center">
+                             <div class="absolute inset-0 flex items-center justify-around opacity-20">
+                                <div class="w-10 h-1 bg-white/50 rounded-full"></div>
+                                <div class="w-16 h-1 bg-white/50 rounded-full"></div>
+                                <div class="w-10 h-1 bg-white/50 rounded-full"></div>
+                             </div>
+                             <div class="animate-drive text-indigo-400">
+                                <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 7h12m0 0l-4-4m4 4l-4 4M8 7a2 2 0 110 4m0-4a2 2 0 100 4m5 10H7a2 2 0 01-2-2V9a2 2 0 012-2h10a2 2 0 012 2v6a2 2 0 01-2 2h-1"></path>
+                                </svg>
+                             </div>
+                        </div>
+                        <span class="font-mono text-indigo-400 text-sm mb-2">IN_TRANSIT</span>
+                        <h3 class="text-xl font-bold text-white mb-2 uppercase">Commute</h3>
+                        <p class="text-slate-400 text-sm text-center">Board the bus or cycle. Navigating the fixed route to the school gate.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Arrival -->
+                <div class="glass p-10 rounded-3xl step-card group">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-4 bg-green-500/10 rounded-2xl group-hover:bg-green-500/20 transition">
+                            <svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <span class="font-mono text-green-600 text-sm">TARGET_REACHED</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 uppercase">Check-In</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Enter the school, reach your classroom, and settle in before the bell rings.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20 text-center text-slate-600 font-mono text-xs uppercase tracking-widest pb-10">
+        End of Sequence // Computational Thinking Lab
+    </footer>
+
+</body>
+</html>
