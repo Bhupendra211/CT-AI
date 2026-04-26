@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 10 CS | AI & Computer Vision Masterclass</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap');
+        
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-purple: #9d50bb;
+            --neon-green: #39ff14;
+            --dark-bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animations */
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+        .scanner-line {
+            height: 2px;
+            background: var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+            position: absolute;
+            width: 100%;
+            animation: scan 3s linear infinite;
+        }
+
+        .step-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-blue);
+        }
+
+        .copy-text {
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        /* Image Placeholder styling */
+        .img-box {
+            width: 100%;
+            height: 200px;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .bounding-box {
+            border: 2px solid var(--neon-green);
+            position: absolute;
+            background: rgba(57, 255, 20, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass px-6 py-4 border-b border-white/5">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="font-bold tracking-tighter text-lg">AI <span class="text-indigo-400">LAB</span></div>
+            <div class="flex gap-6 text-[10px] font-mono tracking-widest uppercase">
+                <a href="#cv-intro" class="hover:text-blue-400">What is CV?</a>
+                <a href="#case-studies" class="hover:text-purple-400">Case Studies</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto space-y-32 pt-24 pb-20">
+
+        <!-- SECTION: WHAT IS COMPUTER VISION -->
+        <section id="cv-intro">
+            <header class="text-center mb-16">
+                <span class="text-xs font-mono text-indigo-400 tracking-widest uppercase">Artificial Intelligence Domain</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mt-2 mb-6">Computer <span class="gradient-text">Vision</span></h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">Teaching computers to see, identify, and process images just like the human eye.</p>
+            </header>
+
+            <div class="glass p-8 md:p-12 rounded-3xl border-t-2 border-indigo-500">
+                <h3 class="text-2xl font-bold mb-6 text-white uppercase tracking-widest">The Definition</h3>
+                <div class="copy-text space-y-6 text-lg">
+                    <p>
+                        <strong>Computer Vision (CV)</strong> is a field of Artificial Intelligence that trains computers to interpret and understand the visual world. Using digital images from cameras and videos, and deep learning models, machines can accurately identify and classify objects — and then react to what they "see."
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="img-box">
+                            <div class="scanner-line"></div>
+                            <!-- SVG Representation of an Image Grid/Pixels -->
+                            <svg width="100" height="100" viewBox="0 0 100 100" class="opacity-20">
+                                <path d="M0 0h100v100H0z" fill="none" stroke="currentColor"/>
+                                <path d="M10 0v100M20 0v100M30 0v100M40 0v100M50 0v100M60 0v100M70 0v100M80 0v100M90 0v100M0 10h100M0 20h100M0 30h100M0 40h100M0 50h100M0 60h100M0 70h100M0 80h100M0 90h100" stroke="currentColor" stroke-width="0.5"/>
+                            </svg>
+                            <span class="absolute text-[10px] font-mono text-slate-500 uppercase">Input: Pixel Matrix [32x32]</span>
+                        </div>
+                        <div class="space-y-4">
+                            <p class="text-sm">While humans see a "Dog," a computer sees a <strong>Matrix of Numbers</strong> (Pixels). CV algorithms process these numbers to find edges, textures, and shapes to identify the object.</p>
+                            <div class="bg-indigo-500/10 p-4 rounded-xl border border-indigo-500/20">
+                                <span class="font-bold block text-indigo-400 mb-1">Key Task: Pattern Recognition</span>
+                                <span class="text-xs text-slate-400">Identifying that 4 vertical lines + a tail shape = "Animal".</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CASE STUDIES -->
+        <section id="case-studies">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold uppercase tracking-widest text-white">Real-World Case Studies</h2>
+                <div class="h-1 w-20 bg-indigo-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="space-y-24">
+                
+                <!-- Case Study 1: Transportation -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="order-2 lg:order-1">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">1. Autonomous Vehicles (Self-Driving)</h3>
+                        <div class="copy-text space-y-4">
+                            <p><strong>The Problem:</strong> How can a car drive safely without a human driver controlling the steering and brakes?</p>
+                            <p><strong>The CV Solution:</strong> Self-driving cars (like Tesla or Waymo) use 360-degree cameras to perform three critical tasks:</p>
+                            <ul class="list-none space-y-3 text-sm">
+                                <li class="flex gap-2"><span class="text-green-400">✔</span> <strong>Lane Detection:</strong> Keeping the car between road markings.</li>
+                                <li class="flex gap-2"><span class="text-green-400">✔</span> <strong>Object Detection:</strong> Identifying pedestrians, cyclists, and other cars.</li>
+                                <li class="flex gap-2"><span class="text-green-400">✔</span> <strong>Sign Recognition:</strong> Reading speed limits and traffic lights.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 img-box" style="height: 300px;">
+                        <img src="https://images.unsplash.com/photo-1558444458-5cd0554d79b4?auto=format&fit=crop&q=80&w=800" alt="Self Driving Car" class="w-full h-full object-cover opacity-40">
+                        <div class="bounding-box" style="top: 40%; left: 30%; width: 20%; height: 30%;"></div>
+                        <span class="absolute top-[40%] left-[30%] bg-green-500 text-[8px] px-1 text-black font-bold uppercase">Vehicle (98%)</span>
+                        <div class="bounding-box" style="top: 50%; left: 60%; width: 10%; height: 25%; border-color: #ef4444;"></div>
+                        <span class="absolute top-[50%] left-[60%] bg-red-500 text-[8px] px-1 text-black font-bold uppercase">Pedestrian (92%)</span>
+                        <div class="scanner-line"></div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: Healthcare -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="img-box" style="height: 300px;">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" alt="Medical Imaging" class="w-full h-full object-cover opacity-40">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                        <svg class="absolute w-24 h-24 text-blue-500 animate-pulse" viewBox="0 0 100 100">
+                             <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="10 5"/>
+                        </svg>
+                        <span class="absolute bottom-4 left-4 text-[10px] font-mono text-blue-400">AI SCAN: ABNORMALITY_DETECTED</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-red-400 mb-4">2. Medical Imaging & Diagnostics</h3>
+                        <div class="copy-text space-y-4">
+                            <p><strong>The Problem:</strong> Doctors often have to scan thousands of X-rays or MRI images, making human fatigue a risk for missing tiny fractures or tumors.</p>
+                            <p><strong>The CV Solution:</strong> AI systems can scan medical images with "Super-Human" precision.</p>
+                            <ul class="list-none space-y-3 text-sm">
+                                <li class="flex gap-2"><span class="text-red-400">●</span> <strong>Early Detection:</strong> Detecting cancer cells that are invisible to the human eye.</li>
+                                <li class="flex gap-2"><span class="text-red-400">●</span> <strong>Precision Surgery:</strong> Robotic arms using cameras to guide surgical tools inside the body.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3: Retail -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <h3 class="text-2xl font-bold text-green-400 mb-4">3. Retail: Cashierless Stores</h3>
+                        <div class="copy-text space-y-4">
+                            <p><strong>The Problem:</strong> Long queues at checkout counters waste time for customers and require many staff members.</p>
+                            <p><strong>The CV Solution:</strong> Stores like <em>Amazon Go</em> use ceiling-mounted cameras to track what you pick up.</p>
+                            <ul class="list-none space-y-3 text-sm">
+                                <li class="flex gap-2"><span class="text-yellow-400">▶</span> <strong>Virtual Carts:</strong> CV identifies the product in your hand and adds it to your digital bill automatically.</li>
+                                <li class="flex gap-2"><span class="text-yellow-400">▶</span> <strong>Loss Prevention:</strong> Monitoring suspicious behavior to prevent shoplifting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="img-box" style="height: 300px;">
+                        <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&q=80&w=800" alt="Retail Store" class="w-full h-full object-cover opacity-30">
+                        <!-- Simulated tracking nodes -->
+                        <div class="absolute top-20 left-40 w-4 h-4 bg-yellow-400 rounded-full animate-ping"></div>
+                        <div class="absolute top-40 left-60 w-4 h-4 bg-yellow-400 rounded-full animate-ping" style="animation-delay: 1s"></div>
+                        <span class="absolute bottom-6 right-6 bg-slate-800 border border-yellow-500 px-4 py-2 rounded-lg text-[10px] font-mono">
+                            OBJ: APPLE_RED <br>PRICE: $1.20 <br>STATUS: IN_BASKET
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Case Study 4: Facial Recognition -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                     <div class="img-box" style="height: 300px; border-color: #9d50bb;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Face Recognition" class="w-full h-full object-cover opacity-40">
+                        <!-- Facial mesh simulation -->
+                        <svg class="absolute w-32 h-40 text-purple-500" viewBox="0 0 100 120">
+                            <path d="M50 20 L40 40 L60 40 Z" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                            <circle cx="40" cy="40" r="1" fill="currentColor"/>
+                            <circle cx="60" cy="40" r="1" fill="currentColor"/>
+                            <circle cx="50" cy="60" r="1" fill="currentColor"/>
+                            <path d="M30 80 Q50 100 70 80" fill="none" stroke="currentColor" stroke-width="1"/>
+                        </svg>
+                        <div class="scanner-line" style="animation-duration: 2s;"></div>
+                        <span class="absolute top-4 right-4 text-purple-400 font-mono text-[8px]">MATCH FOUND: 99.8%</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-purple-400 mb-4">4. Biometrics & Security</h3>
+                        <div class="copy-text space-y-4">
+                            <p><strong>The Problem:</strong> Traditional passwords can be forgotten or stolen. Security guards cannot monitor 1000 cameras at once.</p>
+                            <p><strong>The CV Solution:</strong> Facial recognition identifies key landmarks on a face (distance between eyes, nose shape) to verify identity.</p>
+                            <ul class="list-none space-y-3 text-sm">
+                                <li class="flex gap-2"><span class="text-purple-400">★</span> <strong>Smartphone Unlock:</strong> Using your face to secure your private data.</li>
+                                <li class="flex gap-2"><span class="text-purple-400">★</span> <strong>Airport Security:</strong> Instantly checking passports against live camera feeds.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20 text-center text-slate-600 font-mono text-xs uppercase tracking-widest pb-10 border-t border-white/5 pt-10">
+        AI Domain: Computer Vision // Case Study Module // Grade 10
+    </footer>
+
+</body>
+</html>
