@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowchart Builder - Class 10</title>
+
+<style>
+    body {
+        font-family: Arial;
+        margin: 0;
+        background: #f4f6f8;
+    }
+
+    header {
+        background: #2c3e50;
+        color: white;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 900px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    h2 { color: #2c3e50; }
+
+    button {
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        background: #3498db;
+        color: white;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background: #2980b9;
+    }
+
+    .flowchart {
+        margin-top: 20px;
+        padding: 10px;
+        border: 2px dashed #ccc;
+        min-height: 150px;
+    }
+
+    .box {
+        padding: 10px;
+        margin: 10px auto;
+        width: 200px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .start { background: #27ae60; }
+    .process { background: #3498db; }
+    .decision { background: #e67e22; }
+    .end { background: #c0392b; }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Flowchart Learning Tool</h1>
+    <p>Step-by-Step for Class 10 Students</p>
+</header>
+
+<div class="container">
+
+<h2>📌 What is a Flowchart?</h2>
+<p>
+A flowchart is a diagram that shows steps of a process using shapes and arrows.
+It helps us understand how a problem is solved step by step.
+</p>
+
+<h2>🔷 Flowchart Symbols</h2>
+<ul>
+    <li><b>Start:</b> Beginning of process</li>
+    <li><b>Process:</b> Action or step</li>
+    <li><b>Decision:</b> Question (Yes/No)</li>
+    <li><b>End:</b> Finish</li>
+</ul>
+
+<h2>🎯 Problem: Check if a Student Passes</h2>
+
+<p>
+We will build a flowchart step by step for this problem:
+<br><b>If marks ≥ 40 → Pass, else Fail</b>
+</p>
+
+<h2>🛠️ Build Flowchart</h2>
+
+<button onclick="addStep('start')">Add Start</button>
+<button onclick="addStep('process')">Add Input Marks</button>
+<button onclick="addStep('decision')">Add Decision</button>
+<button onclick="addStep('process2')">Add Result</button>
+<button onclick="addStep('end')">Add End</button>
+<button onclick="resetFlow()">Reset</button>
+
+<div class="flowchart" id="flowchart"></div>
+
+</div>
+
+<script>
+
+function addStep(type) {
+    let box = document.createElement("div");
+
+    if(type === "start"){
+        box.className = "box start";
+        box.innerText = "START";
+    }
+
+    else if(type === "process"){
+        box.className = "box process";
+        box.innerText = "Enter Marks";
+    }
+
+    else if(type === "decision"){
+        box.className = "box decision";
+        box.innerText = "Marks ≥ 40 ?";
+    }
+
+    else if(type === "process2"){
+        box.className = "box process";
+        box.innerText = "Display Pass / Fail";
+    }
+
+    else if(type === "end"){
+        box.className = "box end";
+        box.innerText = "END";
+    }
+
+    document.getElementById("flowchart").appendChild(box);
+}
+
+function resetFlow(){
+    document.getElementById("flowchart").innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>
