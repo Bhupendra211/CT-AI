@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Flowcharts and Pseudocode</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:40px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    color:#cbd5e1;
+    font-size:1.1rem;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding-bottom:50px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    margin-bottom:40px;
+    padding:25px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:fadeUp 1s ease;
+}
+
+.card h2{
+    color:#38bdf8;
+}
+
+.section{
+    margin-top:20px;
+}
+
+.section h3{
+    color:#facc15;
+}
+
+.explanation{
+    line-height:1.8;
+    color:#e2e8f0;
+}
+
+.flowchart{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.step{
+    background:#38bdf8;
+    color:black;
+    padding:12px 20px;
+    border-radius:12px;
+    margin:10px;
+    font-weight:bold;
+    width:260px;
+    text-align:center;
+    animation:pulse 2s infinite;
+    transition:0.3s;
+}
+
+.step:hover{
+    transform:scale(1.08);
+}
+
+.arrow{
+    font-size:28px;
+    animation:bounce 1s infinite;
+}
+
+.code{
+    background:#111827;
+    padding:20px;
+    border-radius:12px;
+    overflow:auto;
+    color:#22c55e;
+    line-height:1.7;
+    margin-top:20px;
+    font-family:Consolas, monospace;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(5px);}
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#cbd5e1;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Flowcharts & Pseudocode</h1>
+    <p>Computational Thinking Activities for Class 10 Students</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>1. Largest of Three Numbers</h2>
+
+<div class="section">
+<h3>Problem Explanation</h3>
+<p class="explanation">
+This problem helps students learn comparison and decision-making.
+The system takes three numbers as input and determines which number is the greatest.
+</p>
+</div>
+
+<div class="section">
+<h3>Animated Flowchart</h3>
+
+<div class="flowchart">
+<div class="step">START</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Input A, B, C</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Compare Numbers</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Find Largest Number</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Display Largest Number</div>
+<div class="arrow">⬇</div>
+
+<div class="step">STOP</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Pseudocode</h3>
+
+<div class="code">
+START<br>
+INPUT A, B, C<br><br>
+
+IF A > B AND A > C THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT A<br>
+
+ELSE IF B > C THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT B<br>
+
+ELSE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT C<br>
+
+END IF<br><br>
+
+STOP
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>2. Even or Odd Number</h2>
+
+<div class="section">
+<h3>Problem Explanation</h3>
+<p class="explanation">
+This problem teaches modulus operator and logical conditions.
+If a number is divisible by 2, it is even; otherwise, it is odd.
+</p>
+</div>
+
+<div class="section">
+<h3>Animated Flowchart</h3>
+
+<div class="flowchart">
+<div class="step">START</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Input Number N</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Check N % 2</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Display Even or Odd</div>
+<div class="arrow">⬇</div>
+
+<div class="step">STOP</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Pseudocode</h3>
+
+<div class="code">
+START<br>
+INPUT N<br><br>
+
+IF N % 2 == 0 THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT "Even"<br>
+
+ELSE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT "Odd"<br>
+
+END IF<br><br>
+
+STOP
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>3. ATM Withdrawal System</h2>
+
+<div class="section">
+<h3>Problem Explanation</h3>
+<p class="explanation">
+This problem teaches students about conditions and validation.
+The ATM allows withdrawal only if sufficient balance is available.
+</p>
+</div>
+
+<div class="section">
+<h3>Animated Flowchart</h3>
+
+<div class="flowchart">
+<div class="step">START</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Input Balance</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Input Withdrawal Amount</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Check Balance</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Display Result</div>
+<div class="arrow">⬇</div>
+
+<div class="step">STOP</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Pseudocode</h3>
+
+<div class="code">
+START<br>
+INPUT Balance<br>
+INPUT Amount<br><br>
+
+IF Amount <= Balance THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Balance = Balance - Amount<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT Balance<br>
+
+ELSE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT "Insufficient Balance"<br>
+
+END IF<br><br>
+
+STOP
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>4. Student Grade System</h2>
+
+<div class="section">
+<h3>Problem Explanation</h3>
+<p class="explanation">
+This activity helps students understand nested conditions and decision-making.
+The program checks marks and assigns grades according to score range.
+</p>
+</div>
+
+<div class="section">
+<h3>Animated Flowchart</h3>
+
+<div class="flowchart">
+<div class="step">START</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Input Marks</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Check Grade Conditions</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Assign Grade</div>
+<div class="arrow">⬇</div>
+
+<div class="step">Display Grade</div>
+<div class="arrow">⬇</div>
+
+<div class="step">STOP</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Pseudocode</h3>
+
+<div class="code">
+START<br>
+INPUT Marks<br><br>
+
+IF Marks >= 90 THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT "Grade A"<br>
+
+ELSE IF Marks >= 75 THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT "Grade B"<br>
+
+ELSE IF Marks >= 50 THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT "Grade C"<br>
+
+ELSE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT "Fail"<br>
+
+END IF<br><br>
+
+STOP
+</div>
+</div>
+</div>
+
+</div>
+
+<footer>
+Interactive Educational Webpage for Computational Thinking
+</footer>
+
+</body>
+</html>
