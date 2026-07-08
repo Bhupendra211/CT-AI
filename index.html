@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login with PIN</title>
+    <title>CT-AI Resources</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,47 +10,20 @@
             color: white;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            padding: 40px;
+            margin: 0;
         }
 
         .container {
             background: #1e293b;
             padding: 30px;
             border-radius: 10px;
-            text-align: center;
-            width: 300px;
+            width: 500px;
         }
 
-        input {
-            padding: 10px;
-            width: 90%;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-        }
-
-        button {
-            padding: 10px 20px;
-            background: #22c55e;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            color: white;
-        }
-
-        button:hover {
-            background: #16a34a;
-        }
-
-        .error {
-            color: red;
-            margin-top: 10px;
-        }
-
-        .links {
-            display: none;
-            text-align: left;
+        h2 {
+            margin-top: 25px;
+            color: #ffffff;
         }
 
         a {
@@ -67,15 +40,7 @@
 </head>
 <body>
 
-<div class="container" id="loginBox">
-    <h2>Enter PIN</h2>
-    <input type="password" id="pin" placeholder="Enter PIN">
-    <br>
-    <button onclick="checkPin()">Login</button>
-    <div class="error" id="errorMsg"></div>
-</div>
-
-<div class="container links" id="linksPage">
+<div class="container">
     <h2>Welcome Bhupendra 🚀</h2>
 
     <a href="https://bhupendra211.github.io/CT-AI/intro_CT.html" target="_blank">
@@ -90,22 +55,17 @@
         Problem Solving & Algorithms
     </a>
 
-
     <a href="https://bhupendra211.github.io/CT-AI/flowchart.html" target="_blank">
-        Introduction of Flow chart
+        Introduction of Flow Chart
     </a>
 
-
-       <a href="https://bhupendra211.github.io/CT-AI/flow_chart_example.html" target="_blank">
-        Flow chart Example
+    <a href="https://bhupendra211.github.io/CT-AI/flow_chart_example.html" target="_blank">
+        Flow Chart Example
     </a>
-    
 
- <a href="https://bhupendra211.github.io/CT-AI/flowchart_example.html" target="_blank">
-        Flow chart Examples
+    <a href="https://bhupendra211.github.io/CT-AI/flowchart_example.html" target="_blank">
+        Flow Chart Examples
     </a>
-    
-
 
     <h2>Case Studies of AI</h2>
 
@@ -121,56 +81,37 @@
         Use of NLP
     </a>
 
-
-        <a href="https://bhupendra211.github.io/CT-AI/case%20study/healthcare.html" target="_blank">
+    <a href="https://bhupendra211.github.io/CT-AI/case%20study/healthcare.html" target="_blank">
         Use of AI in Healthcare
     </a>
 
-
-        <a href="https://bhupendra211.github.io/CT-AI/case%20study/education.html" target="_blank">
+    <a href="https://bhupendra211.github.io/CT-AI/case%20study/education.html" target="_blank">
         Use of AI in Education
     </a>
 
-        <a href="https://bhupendra211.github.io/CT-AI/case%20study/agriculture.html" target="_blank">
+    <a href="https://bhupendra211.github.io/CT-AI/case%20study/agriculture.html" target="_blank">
         Use of AI in Agriculture
     </a>
 
-        <a href="https://bhupendra211.github.io/CT-AI/case%20study/banking.html" target="_blank">
-        Use of AI in Banking & Finanace
+    <a href="https://bhupendra211.github.io/CT-AI/case%20study/banking.html" target="_blank">
+        Use of AI in Banking & Finance
     </a>
 
-        <a href="https://bhupendra211.github.io/CT-AI/case%20study/manufacturing.html" target="_blank">
+    <a href="https://bhupendra211.github.io/CT-AI/case%20study/manufacturing.html" target="_blank">
         Use of AI in Manufacturing
     </a>
 
-
     <h2>Gamification</h2>
-    
+
     <a href="https://bhupendra211.github.io/CT-AI/traffic_control.html" target="_blank">
         Traffic Controller
     </a>
 
-    <a href="https://github.com/Bhupendra211/CT-AI/blob/main/Operating%20System%20Lecture%20Deck.pdf">
-    Operating System PDF
+    <a href="https://github.com/Bhupendra211/CT-AI/blob/main/Operating%20System%20Lecture%20Deck.pdf" target="_blank">
+        Operating System PDF
     </a>
-        
 
 </div>
-
-<script>
-    function checkPin() {
-        const correctPin = "bhupendra1234";
-        const userPin = document.getElementById("pin").value;
-
-        if (userPin === correctPin) {
-            document.getElementById("loginBox").style.display = "none";
-            document.getElementById("linksPage").style.display = "block";
-            document.getElementById("linksPage2").style.display = "block";
-        } else {
-            document.getElementById("errorMsg").innerText = "Wrong PIN ❌";
-        }
-    }
-</script>
 
 </body>
 </html>
